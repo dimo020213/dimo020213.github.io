@@ -3,37 +3,380 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>محمد القحطاني | محاسب قانوني</title>
-<meta name="description" content="محمد القحطاني، محاسب قانوني يساعد الشركات الصغيرة على ضبط تكاليفها.">
-<meta property="og:title" content="محمد القحطاني | محاسب قانوني">
-<meta property="og:description" content="أساعد الشركات الصغيرة على ضبط تكاليفها.">
+<title>…</title>
+<meta name="description" content="">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#F7F8FA; --ink:#1E2A38; --muted:#5B6878; --accent:#1F6F8B; --line:#E2E6EB; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:"Cairo", Tahoma, sans-serif; background:var(--bg); color:var(--ink); line-height:1.8; }
-  main { min-height:100vh; display:grid; place-items:center; padding:32px 20px; }
-  .card { width:100%; max-width:560px; background:#fff; border:1px solid var(--line); border-radius:20px; padding:40px 28px; text-align:center; }
-  .badge { width:84px; height:84px; margin:0 auto 18px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; font-size:34px; font-weight:800; }
-  h1 { margin:0; font-size:30px; font-weight:800; }
-  .title { margin:4px 0 0; color:var(--accent); font-weight:600; font-size:18px; }
-  .tag { margin:18px 0 26px; color:var(--muted); font-size:17px; }
-  a.btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; padding:10px 26px; border-radius:999px; font-weight:600; }
-  footer { margin-top:28px; font-size:13px; color:var(--muted); }
+  /* ===== التصميم: لا حاجة لتعديل هذا الجزء عند تغيير المحتوى ===== */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --ink: #1E2A38;
+    --muted: #5B6878;
+    --accent: #1F6F8B;
+    --accent-soft: #E8F1F4;
+    --line: #E2E6EB;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: "Cairo", Tahoma, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  a { color: var(--accent); }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: flex-end;
+    padding: 10px 16px;
+    background: rgba(246, 247, 249, .92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .lang-btn {
+    font: inherit; font-weight: 700; font-size: 14px;
+    color: var(--accent); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 6px 16px; min-height: 40px; cursor: pointer;
+  }
+  .lang-btn:hover, .lang-btn:focus-visible { border-color: var(--accent); outline: none; }
+
+  main { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+
+  section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    margin-bottom: 16px;
+  }
+  section[hidden] { display: none; }
+  h2 {
+    margin: 0 0 14px; font-size: 20px; font-weight: 800;
+    padding-inline-start: 12px;
+    border-inline-start: 4px solid var(--accent);
+    line-height: 1.4;
+  }
+
+  /* التعريف */
+  .hero { text-align: center; padding-top: 32px; }
+  .avatar {
+    width: 84px; height: 84px; margin: 0 auto 14px;
+    border-radius: 50%; background: var(--accent); color: #fff;
+    display: grid; place-items: center;
+    font-size: 34px; font-weight: 800;
+  }
+  .hero h1 { margin: 0; font-size: 28px; font-weight: 800; line-height: 1.4; }
+  .hero .role { margin: 4px 0 0; color: var(--accent); font-weight: 700; font-size: 18px; }
+  .hero .tagline { margin: 12px 0 0; color: var(--muted); font-size: 17px; }
+  .bio { text-align: start; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .bio p { margin: 0 0 10px; }
+  .bio p:last-child { margin-bottom: 0; }
+
+  /* الخبرات */
+  .job { padding: 14px 0; border-top: 1px solid var(--line); }
+  .job:first-of-type { border-top: 0; padding-top: 0; }
+  .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; align-items: baseline; }
+  .job h3 { margin: 0; font-size: 17px; font-weight: 700; }
+  .period { color: var(--muted); font-size: 14px; direction: ltr; unicode-bidi: isolate; }
+  .job .org { margin: 0; color: var(--accent); font-weight: 600; }
+  ul.list { margin: 8px 0 0; padding-inline-start: 20px; }
+  ul.list li { margin-bottom: 4px; }
+
+  /* الإنجازات والشهادات */
+  ul.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  ul.cards li {
+    background: var(--accent-soft); border-radius: 12px;
+    padding: 12px 14px;
+  }
+  ul.cards .sub { display: block; color: var(--muted); font-size: 14px; }
+
+  /* التواصل */
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .links a {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 8px 22px;
+    background: var(--accent); color: #fff; text-decoration: none;
+    border-radius: 999px; font-weight: 700;
+    flex: 1 1 140px;
+  }
+  .links a:hover, .links a:focus-visible { filter: brightness(1.1); }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 8px 16px 24px; }
+
+  /* رسالة الخطأ والتحميل */
+  .notice { text-align: center; padding: 40px 20px; }
+  .notice.error { border-color: #E9C2C2; background: #FFF6F6; }
+  .notice h2 { border: 0; padding: 0; }
+  .notice code { background: var(--bg); padding: 2px 6px; border-radius: 6px; direction: ltr; unicode-bidi: isolate; }
+
+  @media (min-width: 640px) {
+    main { padding-top: 32px; }
+    section { padding: 32px 32px; }
+    .hero h1 { font-size: 32px; }
+    .links a { flex: 0 0 auto; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <section class="card">
-    <div class="badge" aria-hidden="true">م</div>
-    <h1>محمد القحطاني</h1>
-    <p class="title">محاسب قانوني</p>
-    <p class="tag">أساعد الشركات الصغيرة على ضبط تكاليفها.</p>
-    <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">تواصل معي على لينكدإن</a>
-    <footer>مثال توضيحي من دليل «موقعك المهني بنفسك»</footer>
-  </section>
+<header class="topbar">
+  <button type="button" class="lang-btn" id="langBtn" hidden></button>
+</header>
+
+<main id="app">
+  <section class="notice" id="loading"><p>…</p></section>
 </main>
+
+<footer id="footer"></footer>
+
+<script>
+/*
+  هذه الصفحة تقرأ كل محتواها من الملف content.json.
+  لتعديل اسمك أو خبراتك أو روابطك: عدّل content.json فقط.
+  النصوص أدناه (UI) هي عناوين الأقسام وأزرار الواجهة، وليست معلومات عنك.
+*/
+(function () {
+  "use strict";
+
+  var UI = {
+    ar: {
+      dir: "rtl",
+      experience: "الخبرات",
+      achievements: "الإنجازات",
+      certificates: "الشهادات",
+      contact: "التواصل",
+      switchTo: "English",
+      switchLabel: "Switch to English",
+      updated: "آخر تحديث: ",
+      loading: "جارٍ التحميل…",
+      errorTitle: "تعذّر تحميل محتوى الموقع",
+      errorBody: "لم نتمكن من قراءة الملف content.json. تأكد أنه موجود بجانب index.html وأن صيغته سليمة (JSON صحيح)، ثم أعد تحميل الصفحة.",
+      errorDetail: "تفاصيل تقنية: "
+    },
+    en: {
+      dir: "ltr",
+      experience: "Experience",
+      achievements: "Achievements",
+      certificates: "Certificates",
+      contact: "Contact",
+      switchTo: "العربية",
+      switchLabel: "التبديل إلى العربية",
+      updated: "Last updated: ",
+      loading: "Loading…",
+      errorTitle: "Could not load the site content",
+      errorBody: "The file content.json could not be read. Make sure it sits next to index.html and is valid JSON, then reload the page.",
+      errorDetail: "Technical details: "
+    }
+  };
+
+  var STORAGE_KEY = "site-lang";
+  var data = null;
+  var lang = pickInitialLang();
+
+  // ---------- أدوات مساعدة ----------
+  function pickInitialLang() {
+    var fromUrl = new URLSearchParams(location.search).get("lang");
+    if (fromUrl === "ar" || fromUrl === "en") return fromUrl;
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === "ar" || saved === "en") return saved;
+    } catch (e) {}
+    return "ar";
+  }
+
+  // يقرأ نصًا قد يكون {ar, en} أو نصًا عاديًا
+  function t(value) {
+    if (value == null) return "";
+    if (typeof value === "string" || typeof value === "number") return String(value);
+    if (typeof value === "object") return value[lang] || value.ar || value.en || "";
+    return "";
+  }
+
+  function el(tag, attrs, children) {
+    var node = document.createElement(tag);
+    if (attrs) {
+      for (var k in attrs) {
+        if (k === "text") node.textContent = attrs[k];
+        else if (k === "className") node.className = attrs[k];
+        else node.setAttribute(k, attrs[k]);
+      }
+    }
+    (children || []).forEach(function (c) { if (c) node.appendChild(c); });
+    return node;
+  }
+
+  function safeUrl(url) {
+    url = String(url || "").trim();
+    return /^(https?:|mailto:|tel:)/i.test(url) ? url : null;
+  }
+
+  function section(id, title, body) {
+    var s = el("section", { id: id, "aria-labelledby": id + "-title" });
+    s.appendChild(el("h2", { id: id + "-title", text: title }));
+    body.forEach(function (b) { if (b) s.appendChild(b); });
+    return s;
+  }
+
+  function isEmpty(arr) { return !Array.isArray(arr) || arr.length === 0; }
+
+  // ---------- الأقسام ----------
+  function renderProfile(p) {
+    p = p || {};
+    var name = t(p.name);
+    var s = el("section", { id: "about", className: "hero" });
+    s.appendChild(el("div", { className: "avatar", "aria-hidden": "true", text: name.trim().charAt(0) }));
+    s.appendChild(el("h1", { text: name }));
+    if (t(p.title)) s.appendChild(el("p", { className: "role", text: t(p.title) }));
+    if (t(p.tagline)) s.appendChild(el("p", { className: "tagline", text: t(p.tagline) }));
+
+    var bio = el("div", { className: "bio" });
+    [p.bio_short, p.bio_full].forEach(function (b) {
+      if (t(b)) bio.appendChild(el("p", { text: t(b) }));
+    });
+    if (bio.childNodes.length) s.appendChild(bio);
+    return s;
+  }
+
+  function renderExperience(list) {
+    if (isEmpty(list)) return null;
+    var items = list.map(function (job) {
+      var head = el("div", { className: "job-head" }, [
+        el("h3", { text: t(job.role) }),
+        job.period ? el("span", { className: "period", text: t(job.period) }) : null
+      ]);
+      var hl = null;
+      if (!isEmpty(job.highlights)) {
+        hl = el("ul", { className: "list" }, job.highlights.map(function (h) {
+          return el("li", { text: t(h) });
+        }));
+      }
+      return el("article", { className: "job" }, [
+        head,
+        t(job.org) ? el("p", { className: "org", text: t(job.org) }) : null,
+        hl
+      ]);
+    });
+    return section("experience", UI[lang].experience, items);
+  }
+
+  // يدعم عناصر بصيغة {ar,en} أو كائنات فيها name/title و issuer و year
+  function cardItem(item) {
+    if (item && typeof item === "object" && !("ar" in item) && !("en" in item)) {
+      var main = t(item.name || item.title || item.label);
+      var subParts = [t(item.issuer || item.org), t(item.year || item.date)].filter(Boolean);
+      var li = el("li", null, [document.createTextNode(main)]);
+      if (subParts.length) li.appendChild(el("span", { className: "sub", text: subParts.join(" · ") }));
+      var url = safeUrl(item.url);
+      if (url) {
+        var a = el("a", { href: url, target: "_blank", rel: "noopener", text: "↗" });
+        li.appendChild(document.createTextNode(" "));
+        li.appendChild(a);
+      }
+      return li;
+    }
+    return el("li", { text: t(item) });
+  }
+
+  function renderList(id, list) {
+    if (isEmpty(list)) return null; // القسم يُخفى إذا كان فارغًا
+    return section(id, UI[lang][id], [el("ul", { className: "cards" }, list.map(cardItem))]);
+  }
+
+  function renderLinks(list) {
+    if (isEmpty(list)) return null;
+    var links = list.map(function (l) {
+      var url = safeUrl(l.url);
+      if (!url) return null;
+      var attrs = { href: url, text: t(l.label) || url };
+      if (/^https?:/i.test(url)) { attrs.target = "_blank"; attrs.rel = "noopener"; }
+      return el("a", attrs);
+    }).filter(Boolean);
+    if (!links.length) return null;
+    return section("contact", UI[lang].contact, [el("div", { className: "links" }, links)]);
+  }
+
+  // ---------- العرض ----------
+  function applyLang() {
+    var ui = UI[lang];
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ui.dir;
+    var btn = document.getElementById("langBtn");
+    btn.textContent = ui.switchTo;
+    btn.setAttribute("aria-label", ui.switchLabel);
+    btn.setAttribute("lang", lang === "ar" ? "en" : "ar");
+  }
+
+  function render() {
+    applyLang();
+    var app = document.getElementById("app");
+    app.textContent = "";
+    [
+      renderProfile(data.profile),
+      renderExperience(data.experience),
+      renderList("achievements", data.achievements),
+      renderList("certificates", data.certificates),
+      renderLinks(data.links)
+    ].forEach(function (s) { if (s) app.appendChild(s); });
+
+    // عنوان الصفحة ووصفها من المحتوى
+    var p = data.profile || {};
+    var title = [t(p.name), t(p.title)].filter(Boolean).join(" | ");
+    document.title = title || location.hostname;
+    var desc = t(p.tagline) || t(p.bio_short);
+    document.querySelector('meta[name="description"]').setAttribute("content", desc);
+
+    var footer = document.getElementById("footer");
+    footer.textContent = "";
+    if (data.meta && data.meta.updated) {
+      footer.appendChild(document.createTextNode(UI[lang].updated));
+      footer.appendChild(el("bdi", { dir: "ltr", text: String(data.meta.updated) }));
+    }
+    document.getElementById("langBtn").hidden = false;
+  }
+
+  function showError(err) {
+    applyLang();
+    var ui = UI[lang];
+    var app = document.getElementById("app");
+    app.textContent = "";
+    var box = el("section", { className: "notice error", role: "alert" }, [
+      el("h2", { text: ui.errorTitle }),
+      el("p", { text: ui.errorBody }),
+      el("p", null, [document.createTextNode(ui.errorDetail), el("code", { text: String(err && err.message || err) })])
+    ]);
+    app.appendChild(box);
+    document.title = ui.errorTitle;
+  }
+
+  document.getElementById("langBtn").addEventListener("click", function () {
+    lang = lang === "ar" ? "en" : "ar";
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    if (data) render();
+    window.scrollTo(0, 0);
+  });
+
+  applyLang();
+  document.querySelector("#loading p").textContent = UI[lang].loading;
+
+  fetch("content.json", { cache: "no-cache" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    })
+    .then(function (json) {
+      if (!json || typeof json !== "object") throw new Error("content.json is empty");
+      data = json;
+      render();
+    })
+    .catch(showError);
+})();
+</script>
 </body>
 </html>

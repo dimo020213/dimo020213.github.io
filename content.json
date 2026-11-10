@@ -1,0 +1,25 @@
+{
+  "meta": { "updated": "2026-11-10" },
+  "profile": {
+    "name": { "ar": "محمد القحطاني", "en": "Mohammed Alqahtani" },
+    "title": { "ar": "محاسب", "en": "Accountant" },
+    "tagline": { "ar": "أساعد الشركات الصغيرة والمتوسطة على معرفة ربحها الحقيقي", "en": "Helping SMEs see their real profit" },
+    "bio_short": { "ar": "محاسب بخبرة 10 سنوات في محاسبة التكاليف وإعداد القوائم المالية والزكاة وضريبة القيمة المضافة. أساعد أصحاب الشركات الصغيرة والمتوسطة على ضبط تكاليفهم ومعرفة ربحهم الحقيقي.", "en": "An accountant with 10 years of experience in cost accounting, financial statements, zakat and VAT. I help small and medium-sized business owners control their costs and understand their true profit." },
+    "bio_full": { "ar": "أعمل منذ 2019 في مكتب الريادة للاستشارات المالية بالرياض، حيث أعدّ القوائم المالية للعملاء، وأحلل تكاليفهم، وأجهّز إقرارات الزكاة وضريبة القيمة المضافة. قبل ذلك عملت محاسبًا في شركة النخبة للتجارة من 2016 إلى 2019.", "en": "Since 2019 I have worked at Al Riyadah Financial Consulting in Riyadh, preparing clients' financial statements, analysing their costs, and handling their zakat and VAT returns. Before that I was an accountant at Al Nokhba Trading from 2016 to 2019." }
+  },
+  "experience": [
+    { "org": { "ar": "مكتب الريادة للاستشارات المالية", "en": "Al Riyadah Financial Consulting" }, "role": { "ar": "محاسب", "en": "Accountant" }, "period": "2019 –", "highlights": [
+      { "ar": "إعداد القوائم المالية للعملاء", "en": "Prepared clients' financial statements" },
+      { "ar": "تحليل التكاليف", "en": "Analysed costs" },
+      { "ar": "إعداد إقرارات الزكاة وضريبة القيمة المضافة", "en": "Prepared zakat and VAT returns" } ] },
+    { "org": { "ar": "شركة النخبة للتجارة", "en": "Al Nokhba Trading" }, "role": { "ar": "محاسب", "en": "Accountant" }, "period": "2016 – 2019", "highlights": [
+      { "ar": "إدارة الحسابات اليومية", "en": "Managed day-to-day accounts" },
+      { "ar": "إعداد التسويات البنكية", "en": "Prepared bank reconciliations" } ] }
+  ],
+  "achievements": [ { "ar": "خفّضت مدة إقفال الحسابات الشهرية لأحد العملاء من 10 أيام إلى 6", "en": "Cut a client's monthly close from 10 days to 6" } ],
+  "certificates": [],
+  "links": [
+    { "label": { "ar": "لينكدإن", "en": "LinkedIn" }, "url": "https://linkedin.com/in/mohammed-demo" },
+    { "label": { "ar": "البريد", "en": "Email" }, "url": "mailto:mohammed.demo@example.com" }
+  ]
+}
